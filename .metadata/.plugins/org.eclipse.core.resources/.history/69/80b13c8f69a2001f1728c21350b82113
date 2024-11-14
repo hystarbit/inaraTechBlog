@@ -1,0 +1,10 @@
+package com.blog.inara.member;
+import lombok.Data;
+
+@Data
+public class MemberDTO {
+	private String idMember;
+	private String password;
+	private String name;
+	private String regdate;
+}

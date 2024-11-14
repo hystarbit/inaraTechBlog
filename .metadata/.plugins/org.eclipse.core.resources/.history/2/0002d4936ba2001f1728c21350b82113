@@ -1,0 +1,18 @@
+package com.blog.inara.board;
+
+import java.time.LocalDateTime;
+
+import com.blog.inara.member.MemberDTO;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="board")
+public class boardDTO {
+	private Long idboard;
+	private String title;
+	private String content;
+	private MemberDTO member;
+	private LocalDateTime regdate;
+}

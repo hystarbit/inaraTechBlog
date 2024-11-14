@@ -1,0 +1,5 @@
+package com.blog.inara.comment;
+
+public class CommentController {
+
+}

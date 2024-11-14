@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=4
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.lombok=3
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=4
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.security=3
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.thymeleaf=2
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.validation=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=3
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

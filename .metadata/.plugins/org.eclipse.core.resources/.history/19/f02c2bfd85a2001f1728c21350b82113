@@ -1,0 +1,5 @@
+package com.blog.inara.member;
+
+public class MemberController {
+
+}

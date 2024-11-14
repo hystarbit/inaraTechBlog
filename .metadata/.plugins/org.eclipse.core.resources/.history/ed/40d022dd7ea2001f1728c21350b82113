@@ -1,0 +1,48 @@
+package com.blog.inara.board;
+
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.blog.inara.board.Board;
+import com.blog.inara.board.BoardRepository;
+import com.blog.inara.member.Member;
+import com.blog.inara.member.MemberRepository;
+
+@Service
+public class BoardService {
+	private final BoardRepository boardRepository;
+	
+	public BoardService(BoardRepository boardRepository) {
+		this.boardRepository=boardRepository;
+	}
+	
+	public Board createBoard(String title, String content, Member member) {
+		Board board = new Board();
+		board.setTitle(title);
+		board.setContent(content);
+		board.setMemer(member);
+		board.setRegdate(LocalDateTime.now());
+		return boardReopsitory.save(board);
+	}
+	
+	public Board updateBoard(String idBoard, String title, String content, Member member) {
+		Board board = boardRepository.findById(idBoard)
+				.orElseThrow(()-> new RuntimeException("아이디 혹은 비밀번호가 틀렸습니다."));
+		if(!passwordEncoder.matches(password, member.getPassword())) {
+			throw new RuntimeException("아이디 혹은 비밀번호가 틀렸습니다. ");
+		}
+		
+		return jwtTokenProvider.createToken(member.getIdMember(), member.getRole());
+	}
+	
+	public Member getMemberDetail(String idMember) {
+		return memberRepository.findByMemberId(idMember)
+				.orElseThrow(()-> new RuntimeException("해당 사용자가 존재하지 않습니다."));
+	}
+	
+	public void deleteMember(String idMember) {
+		Member member =  memberRepository.findByMemberId(idMember)
+				.orElseThrow(()-> new RuntimeException("해당 사용자가 존재하지 않습니다."));
+		memberRepository.delete(member);
+	}
+}
